@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img alt="Minyi minyi gan!" style="heigh: 350px; width: 300px" src="./assets/minyi.jpeg" />
-    <MinyiComponent msg="Hinyi Iring2 spiciil ying bisi dingir!" />
+    <MinyiComponent msg="Nyinyir mili kimiw!" />
     <FooterComponent />
   </div>
 </template>
