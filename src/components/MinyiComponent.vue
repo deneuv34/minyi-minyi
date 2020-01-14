@@ -1,19 +1,15 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <div style="display: inline-flex; max-width: 500px; heigh: 500px">
-      <ckeditor
-        :editor="editor"
-        v-model="message"
-        :config="editorConfig"
-      ></ckeditor>
+    <div class="editor-wrapper" style="display: inline-flex; max-width: 100%; heigh: 500px">
+      <ckeditor :editor="editor" v-model="message" :config="editorConfig"></ckeditor>
     </div>
     <div class="btn-div">
       <button class="btn-ok" type="button" @click="transform(message)">
         <span class="reset-color">Prikitiw</span>
       </button>
     </div>
-    <div style="width: 500px; display: inline-flex">
+    <div class="result-wrapper" style="width: 500px; display: inline-flex">
       <p v-html="resText" style="text-align: left">{{ resText }}</p>
     </div>
   </div>
@@ -49,6 +45,17 @@ export default {
 };
 </script>
 
+<style>
+.ck.ck-editor__main > .ck-editor__editable {
+  height: 300px;
+}
+
+@media (max-width: 767px) {
+  .ck.ck-editor {
+    max-width: 100vw;
+  }
+}
+</style>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .result-text {
@@ -101,5 +108,16 @@ a {
   min-width: 100px;
   max-width: 100%;
   height: 200px;
+}
+
+@media (max-width: 767px) {
+  .editor-wrapper {
+    max-width: 100vw;
+    overflow-x: scroll;
+  }
+
+  .result-wrapper {
+    max-width: 100vw !important;
+  }
 }
 </style>
